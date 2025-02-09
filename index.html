@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/navbar.css" />
+    <link rel="stylesheet" href="./src/styles/home.css" />
+
+    <script
+      src="https://kit.fontawesome.com/c26294d08e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>FilmDB</title>
+  </head>
+  <body>
+    <header class="navigation-container">
+      <nav class="navigation-bar container">
+        <div class="logo">
+          <a href="/">film db</a>
+        </div>
+
+        <ul class="tabs">
+          <li class="tab">
+            <a href="#">Movies</a>
+          </li>
+          <li class="tab">
+            <a href="#">TV Shows</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="container trending-section">
+      <h1>Trending</h1>
+      <span class="underline"></span>
+      <div class="trending trending-js"></div>
+    </section>
+
+    <script type="module" src="./src/scripts/home.js"></script>
+  </body>
+</html>
