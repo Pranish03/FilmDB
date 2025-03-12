@@ -5,23 +5,27 @@
   justify-content: center;
 }
 
-.navigation-container .navigation-bar {
+.navigation-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 0px;
 }
 
-.navigation-container .navigation-bar .logo a {
+.logo a {
   font-family: "Roboto Condensed", serif;
   text-decoration: none;
-  color: cadetblue;
+  color: #ffffffde;
   font-size: 30px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 800;
 }
 
-.navigation-container .navigation-bar .tabs {
+.logo .col {
+  color: cadetblue;
+}
+
+.tabs {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,13 +33,14 @@
   font-size: 16px;
 }
 
-.navigation-container .navigation-bar .tabs .tab {
+.tabs .tab {
   position: relative;
   list-style: none;
   cursor: pointer;
 }
 
-.navigation-container .navigation-bar .tabs .tab a {
+.tabs .tab a {
   text-decoration: none;
   color: #fffffff2;
+  font-size: 16px;
 }

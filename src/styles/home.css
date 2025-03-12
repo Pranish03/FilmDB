@@ -1,23 +1,11 @@
 .trending-section h1 {
-  margin-top: 50px;
-  margin-bottom: 5px;
-}
-
-.trending-section span {
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: #1e1e1e;
-  margin-bottom: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .trending-section .trending {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  overflow: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
 }

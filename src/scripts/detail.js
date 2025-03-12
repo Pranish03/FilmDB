@@ -32,36 +32,14 @@ async function getDetail(type, id) {
 
 function renderHTML(data) {
   document.querySelector(".root-js").innerHTML = `
-    <div class="background">
-      <img src="${posterURL}/original${data.backdrop_path}" />
-    </div>
     <div class="container">
       <div class="wrapper">
         <img class="poster" src="${posterURL}/w500${data.poster_path}" />
         <div>
           <h1>${data.title || data.name}</h1>
-          <p>
-            ${new Date(data.release_date).toLocaleDateString("en-GB", {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric",
-            })}
-            <b>&bull;</b>
-            ${data.genres
-              .map((genre) => {
-                return genre.name;
-              })
-              .join(", ")}
-            ${
-              data.status === "Released"
-                ? `<b>&bull;</b>
-                  ${Math.floor(data.runtime / 60)}h ${data.runtime % 60}m`
-                : ""
-            }
-          </p>
+          
           <p>Original title: ${data.original_title}</p>
           <br />
-          <h3>Overview</h3>
           <p class="overview">${data.overview}</p>
         </div>
       </div>
@@ -70,3 +48,25 @@ function renderHTML(data) {
 }
 
 getDetail(mediaType, mediaId);
+
+/*
+<p>
+  $
+  {new Date(data.release_date).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  })}
+  <b>&bull;</b>$
+  {data.genres
+    .map((genre) => {
+      return genre.name;
+    })
+    .join(", ")}
+  $
+  {data.status === "Released"
+    ? `<b>&bull;</b>
+                  ${Math.floor(data.runtime / 60)}h ${data.runtime % 60}m`
+    : ""}
+</p>
+*/
