@@ -27,29 +27,31 @@ function renderHTML(data) {
   pageHTML += data.results
     .map((movie) => {
       return `
-        <div 
-          class="card card-js" 
-          data-id="${movie.id}"
-          data-type="${movie.media_type}"
-        >
+        <div class="card card-js">
           <img 
-            class="poster" 
+            class="card__poster" 
             src="${posterURL}/w500${movie.poster_path}"
             alt="${movie.title || movie.name}" 
           />
-          <h3>${movie.title || movie.name}</h3>
-          <p>${formatDate(movie.release_date || movie.first_air_date)}</p>
+          <div 
+            class="card__content content-js"
+            data-id="${movie.id}"
+            data-type="${movie.media_type}"
+          >
+            <h3>${movie.title || movie.name}</h3>
+            <p>${formatDate(movie.release_date || movie.first_air_date)}</p>
+          </div>
         </div>
       `;
     })
     .join("");
 
-  document.querySelector(".trending-js").innerHTML = pageHTML;
+  document.querySelector(".trending-grid-js").innerHTML = pageHTML;
 }
 
 function handleClick() {
-  document.querySelector(".trending-js").addEventListener("click", (e) => {
-    const card = e.target.closest(".card");
+  document.querySelector(".trending-grid-js").addEventListener("click", (e) => {
+    const card = e.target.closest(".content-js");
     if (card) {
       const mediaType = card.getAttribute("data-type");
       const mediaId = card.getAttribute("data-id");

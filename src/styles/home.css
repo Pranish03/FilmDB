@@ -4,8 +4,38 @@
   text-transform: uppercase;
 }
 
-.trending-section .trending {
+.stacked {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
   gap: 15px;
+}
+
+.card__poster {
+  width: 100%;
+  aspect-ratio: 1 / 1.4;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card__content {
+  align-self: end;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.card__content h3 {
+  margin-top: 8px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -38,7 +38,7 @@ function renderHTML(data) {
         <div>
           <h1>${data.title || data.name}</h1>
           
-          <p>Original title: ${data.original_title}</p>
+          <p>Original title: ${data.original_title || data.original_name}</p>
           <br />
           <p class="overview">${data.overview}</p>
         </div>
