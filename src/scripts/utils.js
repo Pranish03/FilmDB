@@ -13,3 +13,33 @@ export const formatDate = (dateStr) => {
 
   return formattedDate;
 };
+
+export function formatListDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+}
+
+export function displayStars(rating) {
+  let starsOutOf5 = (rating / 10) * 5;
+  let fullStars = Math.floor(starsOutOf5); // Full stars
+  let halfStar = starsOutOf5 % 1 >= 0.5 ? 1 : 0; // Half star if >= 0.5
+  let emptyStars = 5 - fullStars - halfStar; // Remaining empty stars
+
+  let starHTML = "";
+
+  for (let i = 0; i < fullStars; i++) {
+    starHTML += '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>'; // Full star
+  }
+  if (halfStar) {
+    starHTML +=
+      '<i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>'; // Half star
+  }
+  for (let i = 0; i < emptyStars; i++) {
+    starHTML += '<i class="fa-regular fa-star" style="color: #FFD43B;"></i>'; // Empty star
+  }
+
+  return starHTML;
+}

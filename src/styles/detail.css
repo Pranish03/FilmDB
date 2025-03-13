@@ -1,27 +1,91 @@
-.root .wrapper {
+.detail {
   max-width: 1200px;
+  width: 100%;
   margin-top: 50px;
   display: flex;
   gap: 30px;
 }
 
-.wrapper h1 {
+.detail__content h1 {
   font-size: 30px;
 }
 
-.root .wrapper p {
-  font-weight: 300;
-  font-size: 18px;
-  opacity: 0.7;
+.detail__content .subtitle {
+  font-size: 17px;
 }
 
-.root .wrapper .overview {
+.subtitle span {
+  font-size: 14px;
+  border: 1px solid #ffffffde;
+  padding: 0px 5px;
+  border-radius: 4px;
+  margin-right: 5px;
+  text-transform: capitalize;
+}
+
+.detail p {
+  font-weight: 300;
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+.overview {
   text-align: justify;
 }
 
-.root .wrapper .poster {
+.detail__poster {
   width: 300px;
-  height: 450px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.detail__rating {
+  margin-bottom: 10px;
+}
+
+.detail__rating i {
+  font-size: 18px;
+  margin-right: 3px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.crumb-home {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumbs i {
+  font-size: 12px;
+}
+
+.fa-house {
+  color: cadetblue;
+}
+
+.breadcrumbs a {
+  color: #ffffffde;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.tables {
+  display: flex;
+  align-items: baseline;
+  gap: 40px;
+}
+
+.tables td {
+  opacity: 0.8;
+  font-size: 17px;
+  padding-right: 10px;
+  min-width: max-content;
 }

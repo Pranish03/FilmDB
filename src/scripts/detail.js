@@ -1,4 +1,6 @@
-import { apiToken, apiURL, posterURL } from "./utils";
+import breadCrumbs from "./components/breadCrumbs";
+import { detail } from "./components/detail";
+import { apiToken, apiURL } from "./utils";
 
 const params = new URLSearchParams(window.location.search);
 
@@ -23,50 +25,15 @@ async function getDetail(type, id) {
 
     const data = await response.json();
 
-    console.log(data);
-    renderHTML(data);
+    document.querySelector(".breadcrumbs-js").innerHTML = breadCrumbs(
+      type,
+      data.title || data.name
+    );
+
+    document.querySelector(".root-js").innerHTML = detail(data, type);
   } catch (err) {
     console.log(`Error: ${err}`);
   }
 }
 
-function renderHTML(data) {
-  document.querySelector(".root-js").innerHTML = `
-    <div class="container">
-      <div class="wrapper">
-        <img class="poster" src="${posterURL}/w500${data.poster_path}" />
-        <div>
-          <h1>${data.title || data.name}</h1>
-          
-          <p>Original title: ${data.original_title || data.original_name}</p>
-          <br />
-          <p class="overview">${data.overview}</p>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
 getDetail(mediaType, mediaId);
-
-/*
-<p>
-  $
-  {new Date(data.release_date).toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  })}
-  <b>&bull;</b>$
-  {data.genres
-    .map((genre) => {
-      return genre.name;
-    })
-    .join(", ")}
-  $
-  {data.status === "Released"
-    ? `<b>&bull;</b>
-                  ${Math.floor(data.runtime / 60)}h ${data.runtime % 60}m`
-    : ""}
-</p>
-*/
