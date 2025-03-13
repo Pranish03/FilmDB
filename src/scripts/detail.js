@@ -3,11 +3,10 @@ import { detail } from "./components/detail";
 import { apiToken, apiURL } from "./utils";
 
 const params = new URLSearchParams(window.location.search);
+const encodedData = params.get("data");
 
-const mediaType = params.get("type");
-const mediaId = params.get("id");
-
-console.log(mediaId);
+const decodedString = atob(encodedData);
+const [mediaType, mediaId] = decodedString.split(":");
 
 async function getDetail(type, id) {
   try {

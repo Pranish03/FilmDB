@@ -55,7 +55,8 @@ function handleClick() {
     if (card) {
       const mediaType = card.getAttribute("data-type");
       const mediaId = card.getAttribute("data-id");
-      window.location.href = `detail.html?type=${mediaType}&id=${mediaId}`;
+      const encodedParams = btoa(`${mediaType}:${mediaId}`);
+      window.location.href = `detail.html?data=${encodedParams}`;
     }
   });
 }
