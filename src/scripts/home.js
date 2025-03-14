@@ -1,4 +1,10 @@
-import { apiToken, apiURL, formatDate, posterURL } from "./utils";
+import {
+  apiToken,
+  apiURL,
+  formatDate,
+  posterURL,
+  toggleNavMenu,
+} from "./utils";
 
 async function fetchData() {
   try {
@@ -60,6 +66,8 @@ function handleClick() {
     }
   });
 }
+
+toggleNavMenu();
 
 fetchData();
 handleClick();

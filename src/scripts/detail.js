@@ -1,6 +1,6 @@
 import breadCrumbs from "./components/breadCrumbs";
 import { detail } from "./components/detail";
-import { apiToken, apiURL } from "./utils";
+import { apiToken, apiURL, toggleNavMenu } from "./utils";
 
 const params = new URLSearchParams(window.location.search);
 const encodedData = params.get("data");
@@ -34,5 +34,7 @@ async function getDetail(type, id) {
     console.log(`Error: ${err}`);
   }
 }
+
+toggleNavMenu();
 
 getDetail(mediaType, mediaId);
