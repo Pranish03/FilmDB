@@ -3,6 +3,7 @@
   width: 100%;
   margin-top: 50px;
   display: flex;
+  flex-direction: row;
   gap: 30px;
 }
 
@@ -79,6 +80,7 @@
 
 .tables {
   display: flex;
+  flex-direction: row;
   align-items: baseline;
   gap: 40px;
 }
@@ -88,4 +90,31 @@
   font-size: 17px;
   padding-right: 10px;
   min-width: max-content;
+}
+
+@media (max-width: 1050px) {
+  .tables {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tables td {
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 800px) {
+  .tables td {
+    min-width: 110px;
+  }
+
+  .detail {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .detail__poster {
+    width: 100%;
+  }
 }

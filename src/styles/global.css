@@ -2,7 +2,7 @@
 :root {
   font-family: "Red Hat Display", serif;
   line-height: 1.5;
-  background-color: #1e1e1e;
+  background-color: #1e2939;
   color: #ffffffde;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,7 +19,7 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 img {

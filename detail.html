@@ -16,19 +16,23 @@
   </head>
   <body>
     <header class="navigation-container">
-      <nav class="navigation-bar container">
+      <nav class="navigation__bar container">
         <div class="logo">
           <a href="/">Mov<span class="col">base</span></a>
         </div>
 
-        <ul class="tabs">
-          <li class="tab">
-            <a href="#">Movies</a>
-          </li>
-          <li class="tab">
-            <a href="#">TV Shows</a>
-          </li>
+        <ul class="nav__items nav__items-js">
+          <div class="search__box">
+            <input placeholder="Search..." type="text" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">TV Shows</a></li>
         </ul>
+
+        <div class="menu__button menu__button-js">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </nav>
     </header>
 
@@ -37,5 +41,6 @@
     <main class="root root-js"></main>
 
     <script type="module" src="./src/scripts/detail.js"></script>
+    <script src="./src/scripts/navbar.js"></script>
   </body>
 </html>

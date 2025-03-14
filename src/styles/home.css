@@ -15,7 +15,7 @@
 
 .trending-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
   gap: 15px;
 }
 
