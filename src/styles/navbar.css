@@ -17,7 +17,7 @@
   font-family: "Roboto Condensed", serif;
   text-decoration: none;
   color: #ffffffde;
-  font-size: 30px;
+  font-size: 36px;
   text-transform: capitalize;
   font-weight: 800;
 }
@@ -117,5 +117,10 @@
 
   .search__box {
     width: 100%;
+  }
+
+  .navigation__bar {
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }

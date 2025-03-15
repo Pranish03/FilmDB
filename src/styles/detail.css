@@ -53,6 +53,7 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   margin-top: 30px;
   font-size: 16px;
@@ -85,14 +86,23 @@
   gap: 40px;
 }
 
+.tables table {
+  table-layout: fixed;
+}
+
 .tables td {
   opacity: 0.8;
   font-size: 17px;
   padding-right: 10px;
   min-width: max-content;
+  vertical-align: top;
 }
 
 @media (max-width: 1050px) {
+  .detail {
+    flex-direction: column;
+  }
+
   .tables {
     flex-direction: column;
     gap: 0;
@@ -104,16 +114,17 @@
 }
 
 @media (max-width: 800px) {
-  .tables td {
-    min-width: 110px;
+  .detail {
+    margin-top: 20px;
+    gap: 20px;
   }
 
-  .detail {
-    flex-direction: column;
+  .breadcrumbs {
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 320px) {
   .detail__poster {
     width: 100%;
   }
