@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./src/styles/global.css" />
     <link rel="stylesheet" href="./src/styles/navbar.css" />
     <link rel="stylesheet" href="./src/styles/detail.css" />
+    <link rel="stylesheet" href="./src/styles/trailer.css" />
 
     <script
       src="https://kit.fontawesome.com/c26294d08e.js"
@@ -39,6 +40,17 @@
     <div class="container breadcrumbs breadcrumbs-js"></div>
 
     <main class="root root-js"></main>
+
+    <div class="overlay trailer__overlay-js">
+      <div class="overlay-content">
+        <span class="close-btn close__btn-js">&times;</span>
+        <iframe
+          class="trailer__frame trailer__frame-js"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
     <script type="module" src="./src/scripts/detail.js"></script>
   </body>

@@ -8,7 +8,7 @@ export const detail = (data, type) => {
             class="detail__poster" 
             src="${posterURL}/w500${data.poster_path}" 
           />
-          
+
           <div class="detail__content">
             <h1>
               ${data.title || data.name} 
@@ -17,12 +17,11 @@ export const detail = (data, type) => {
               ).toLocaleDateString("en-GB", {
                 year: "numeric",
               })})
-            </h1>
-  
+            </h1>  
+
             <div class="detail__rating">
               ${displayStars(data.vote_average)}
             </div>
-  
   
             <div class="subtitle">
               <span>${type}</span>
@@ -48,11 +47,14 @@ export const detail = (data, type) => {
               }
             </div>
 
-            <span class="spacing"></span>
+            <button class="play__btn play__btn-js">
+              <span class="btn__container">
+                <i class="fa-solid fa-play"></i>
+              </span>
+              Play Trailer
+            </button>
   
             <p class="overview">${data.overview}</p>
-
-            <span class="spacing"></span>
   
             <div class="tables">
               <table>
