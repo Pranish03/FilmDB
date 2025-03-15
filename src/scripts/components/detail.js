@@ -8,6 +8,7 @@ export const detail = (data, type) => {
             class="detail__poster" 
             src="${posterURL}/w500${data.poster_path}" 
           />
+          
           <div class="detail__content">
             <h1>
               ${data.title || data.name} 
@@ -46,9 +47,13 @@ export const detail = (data, type) => {
                   : ""
               }
             </div>
-            <br />
+
+            <span class="spacing"></span>
+  
             <p class="overview">${data.overview}</p>
-            <br />
+
+            <span class="spacing"></span>
+  
             <div class="tables">
               <table>
                 <tr>
