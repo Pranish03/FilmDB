@@ -19,6 +19,10 @@
   gap: 15px;
 }
 
+.card {
+  cursor: pointer;
+}
+
 .card__poster {
   width: 100%;
   aspect-ratio: 1 / 1.4;
@@ -29,7 +33,6 @@
 .card__content {
   align-self: end;
   padding: 0 5px;
-  cursor: pointer;
 }
 
 .card__content h3 {

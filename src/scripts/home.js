@@ -33,17 +33,17 @@ function renderHTML(data) {
   pageHTML += data.results
     .map((movie) => {
       return `
-        <div class="card card-js">
+        <div 
+          class="card card-js"
+          data-id="${movie.id}"
+          data-type="${movie.media_type}"
+        >
           <img 
             class="card__poster" 
             src="${posterURL}/w500${movie.poster_path}"
             alt="${movie.title || movie.name}" 
           />
-          <div 
-            class="card__content content-js"
-            data-id="${movie.id}"
-            data-type="${movie.media_type}"
-          >
+          <div class="card__content content-js">
             <h3>${movie.title || movie.name}</h3>
             <p>${formatDate(movie.release_date || movie.first_air_date)}</p>
           </div>
@@ -57,7 +57,7 @@ function renderHTML(data) {
 
 function handleClick() {
   document.querySelector(".trending-grid-js").addEventListener("click", (e) => {
-    const card = e.target.closest(".content-js");
+    const card = e.target.closest(".card-js");
     if (card) {
       const mediaType = card.getAttribute("data-type");
       const mediaId = card.getAttribute("data-id");

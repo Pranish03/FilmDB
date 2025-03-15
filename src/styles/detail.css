@@ -8,6 +8,7 @@
 }
 
 .detail__content h1 {
+  margin-top: 10px;
   font-size: 30px;
 }
 
@@ -35,8 +36,8 @@
 }
 
 .detail__poster {
-  width: 300px;
-  height: 400px;
+  width: 266px;
+  aspect-ratio: 1 / 1.4;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -114,6 +115,14 @@
     flex-direction: column;
   }
 
+  .detail__content h1 {
+    margin-top: 0px;
+  }
+
+  .detail__poster {
+    width: 266px;
+  }
+
   .tables {
     flex-direction: column;
     gap: 0;
@@ -140,7 +149,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 286px) {
   .detail__poster {
     width: 100%;
   }
