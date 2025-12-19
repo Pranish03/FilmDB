@@ -6,9 +6,14 @@ import {
   toggleNavMenu,
 } from "./utils";
 
-async function fetchData() {
+async function fetchData(type = "all") {
   try {
-    const response = await fetch(`${apiURL}/trending/all/week`, {
+    const endpoint =
+      type === "all"
+        ? `${apiURL}/trending/all/week`
+        : `${apiURL}/trending/${type}/week`;
+
+    const response = await fetch(endpoint, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${apiToken}`,
@@ -21,7 +26,6 @@ async function fetchData() {
     }
 
     const data = await response.json();
-
     renderHTML(data);
   } catch (error) {
     console.log(`Error: ${error}`);
@@ -36,7 +40,7 @@ function renderHTML(data) {
         <div 
           class="card card-js"
           data-id="${movie.id}"
-          data-type="${movie.media_type}"
+          data-type="${movie.first_air_date ? "tv" : "movie"}"
         >
           <img 
             class="card__poster" 
@@ -55,6 +59,16 @@ function renderHTML(data) {
   document.querySelector(".trending-grid-js").innerHTML = pageHTML;
 }
 
+function handleNavClick() {
+  document.querySelectorAll(".nav-link-js").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const type = link.dataset.type;
+      fetchData(type);
+    });
+  });
+}
+
 function handleClick() {
   document.querySelector(".trending-grid-js").addEventListener("click", (e) => {
     const card = e.target.closest(".card-js");
@@ -68,6 +82,6 @@ function handleClick() {
 }
 
 toggleNavMenu();
-
 fetchData();
 handleClick();
+handleNavClick();
